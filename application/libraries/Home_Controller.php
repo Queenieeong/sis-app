@@ -12,6 +12,7 @@ class Home_Controller extends CI_Controller
 	protected $_activeLink = 'home';
 	protected $_pageHeader = 'Home';
 
+
 	function __construct()
 	{
 		parent::__construct();

@@ -64,8 +64,19 @@
                 </li>
             </ul>
 
-            <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('online_enrollment'); ?>">Online Enrollment</a>&nbsp;
-            <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('auth/login'); ?>">Login to Portal</a>
+            <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('online_enrollment'); ?>">Online Registration</a>&nbsp;
+
+            <?php if ($this->ion_auth->logged_in()): ?>
+                <?php if ($this->ion_auth->in_group(array('student'))): ?>
+                <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('account/my_classes/student'); ?>">Go Back to Portal</a>
+                <?php endif; ?>
+                <?php if ($this->ion_auth->in_group(array('admin', 'teacher'))) : ?>
+                <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('account/my_classes/teacher'); ?>">Go Back to Portal</a>
+                <?php endif; ?>
+            <?php else: ?>
+                <a class="btn btn-success my-2 my-sm-0" href="<?php echo site_url('auth/login'); ?>">Login to Portal</a>
+            <?php endif; ?>
+
         </div>
     </nav>
     <div class="container-fluid">
@@ -97,18 +108,52 @@
         </div>
     </div>
     <main role="main" class="container">
-
-
-
         <div class="starter-template">
-
             <h1>Probex School Inc.</h1>
             <p class="lead"><b>PR(edict) - OB(serve) - EX(plore)</b></p>
-						<p class="lead">127 M.H. Del Pilar st. Santulan, Malabon City</p>
-        
+			<p class="lead">127 M.H. Del Pilar st. Santulan, Malabon City</p>
         </div>
-
     </main>
+
+    <?php if ($this->session->flashdata('SUCCESS_MESSAGE') != ''): ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr.success("<?php echo $this->session->flashdata('SUCCESS_MESSAGE'); ?>")
+        });
+    </script>
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('ERROR_MESSAGE') != ''): ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr.error("<?php echo $this->session->flashdata('ERROR_MESSAGE'); ?>")
+        });
+    </script>
+    <?php endif; ?>
 
 </body>
 </html>

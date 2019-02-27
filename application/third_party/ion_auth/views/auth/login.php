@@ -95,12 +95,12 @@
 		</div>
 
 		<div class="checkbox mb-3">
-			<label>
+			<!-- <label>
 				<input type="checkbox" value="remember-me"> Remember me
-			</label>
+			</label> -->
 		</div>
 		<button class="btn btn-success btn-block" type="submit">Sign in</button>
-		<p class="mt-5 mb-3 text-muted">Probex School Inc., &copy; <?php echo date('Y'); ?></p>
+		<p class="mt-3 mb-3 text-muted"><a href="<?php echo site_url(); ?>">Probex School Inc.</a> &copy; <?php echo date('Y'); ?></p>
 	</form>
 
 </body>

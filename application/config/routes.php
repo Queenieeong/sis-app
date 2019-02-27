@@ -91,9 +91,10 @@ $route['scheduling/create']           = 'SchedulingController/create';
 $route['scheduling/ajax/([a-zA-Z]+)'] = 'SchedulingController/ajax/$1';
 $route['scheduling/details/(:any)']   = 'SchedulingController/details/$1';
 
-$route['users'] = 'AuthController/userList';
+$route['users'] = 'UserController';
 $route['users/change_password/(:num)/(:any)'] = 'UserController/change_password/$1/$2';
 $route['users/reset_password/(:num)'] = 'UserController/reset_password/$1';
+$route['users/create_user'] = 'UserController/create_user';
 $route['roles'] = 'AuthController/roleList';
 $route['users_roles'] = 'AuthController/userGroupList';
 $route['roles_permissionss'] = 'AuthController/rolePermissionList';

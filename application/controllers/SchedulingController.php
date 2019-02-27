@@ -6,7 +6,7 @@ class SchedulingController extends MY_Controller
 {
 	protected $columnsRows = [
 		['header' => 'Title', 'data' => 'viewDetailsLink', 'alignment' => 'text-left'],
-		['header' => 'Adviser', 'data' => 'adviser_id', 'alignment' => 'text-center'],
+		['header' => 'Adviser', 'data' => 'adviser', 'alignment' => 'text-center'],
 		['header' => 'Capacity', 'data' => 'capacity', 'alignment' => 'text-center'],
 		['header' => 'Total Enrolled', 'data' => 'total_enrolled', 'alignment' => 'text-center'],
 		['header' => 'Total Dropped', 'data' => 'total_dropped', 'alignment' => 'text-center'],

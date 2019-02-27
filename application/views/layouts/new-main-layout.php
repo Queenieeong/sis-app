@@ -111,24 +111,24 @@
                         <i class="fas fa-address-card"></i><span class="ml-spacer"></span> Student Enrolment
                     </a>
                 </li>
-
-               <!--  <li class="nav-item">
-                    <a class="nav-link <?php echo ($activeLink === 'registrar') ? 'active':'' ?> dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cogs"></i><span class="ml-spacer"></span>
-                        Registrar
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo site_url('admission'); ?>">Student Regristration</a>
-                        <a class="dropdown-item" href="<?php echo site_url('enrolment'); ?>">Student Enrollment</a>
-                    </div>
-                </li> -->
                 <li class="border-bottom"></li>
                 <?php endif; ?>
-
                 <?php if ($this->ion_auth->in_group(array('admin'))): ?>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($activeLink === 'users') ? 'active':'' ?>" href="<?php echo site_url('users'); ?>">
+                        <i class="fas fa-users"></i><span class="ml-spacer"></span> Users
+                    </a>
+                </li>
+                <li class="border-bottom"></li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($activeLink === 'students') ? 'active':'' ?>" href="<?php echo site_url('students'); ?>">
                         <i class="fas fa-user-graduate"></i><span class="ml-spacer"></span> Students
+                    </a>
+                </li>
+                <li class="border-bottom"></li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($activeLink === 'teacher') ? 'active':'' ?>" href="<?php echo site_url('teacher'); ?>">
+                        <i class="fas fa-chalkboard-teacher"></i><span class="ml-spacer"></span> Teachers
                     </a>
                 </li>
                 <li class="border-bottom"></li>
@@ -141,12 +141,6 @@
                         <a class="dropdown-item" href="<?php echo site_url('admission'); ?>">Student Regristration</a>
                         <a class="dropdown-item" href="<?php echo site_url('enrolment'); ?>">Student Enrollment</a>
                     </div>
-                </li>
-                <li class="border-bottom"></li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($activeLink === 'teacher') ? 'active':'' ?>" href="<?php echo site_url('teacher'); ?>">
-                        <i class="fas fa-chalkboard-teacher"></i><span class="ml-spacer"></span> Teacher Management
-                    </a>
                 </li>
                 <li class="border-bottom"></li>
                 <li class="nav-item">
@@ -174,11 +168,11 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="<?php echo site_url('schoolYears'); ?>">School Years</a>
-                        <a class="dropdown-item" href="<?php echo site_url('schoolDepartments'); ?>">School Departments</a>
-                        <a class="dropdown-item" href="<?php echo site_url('schoolGradeLevels'); ?>">School Grade Levels</a>
-                        <a class="dropdown-item" href="<?php echo site_url('schoolSections'); ?>">School Sections</a>
-                        <a class="dropdown-item" href="<?php echo site_url('schoolSubjects'); ?>">School Subjects</a>
-                        <a class="dropdown-item" href="<?php echo site_url('credential'); ?>">School Student Credential</a>
+                        <a class="dropdown-item" href="<?php echo site_url('schoolDepartments'); ?>">Departments</a>
+                        <a class="dropdown-item" href="<?php echo site_url('schoolGradeLevels'); ?>">Grade Levels</a>
+                        <a class="dropdown-item" href="<?php echo site_url('schoolSections'); ?>">Sections</a>
+                        <a class="dropdown-item" href="<?php echo site_url('schoolSubjects'); ?>">Subjects</a>
+                        <a class="dropdown-item" href="<?php echo site_url('credential'); ?>">Student Credential</a>
                     </div>
                 </li>
                 <li class="border-bottom"></li>

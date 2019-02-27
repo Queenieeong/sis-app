@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Current Enrolled Student</h5>
-        <h6 class="card-subtitle">School Year : 2014-2015</h6>
+        <h6 class="card-subtitle">School Year : <?php echo $school_year['name']; ?></h6>
         <canvas class="my-4 w-100" id="myChart"></canvas>
       </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Current Enrolled Student</h5>
-        <h6 class="card-subtitle">School Year : 2014-2015</h6>
+        <h6 class="card-subtitle">School Year : <?php echo $school_year['name']; ?></h6>
         <canvas class="my-4 w-100" id="myChart"></canvas>
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Current Enrolled Student</h5>
-        <h6 class="card-subtitle">School Year : 2014-2015</h6>
+        <h6 class="card-subtitle">School Year : <?php echo $school_year['name']; ?></h6>
         <canvas class="my-4 w-100" id="myChart"></canvas>
       </div>
     </div>
@@ -45,7 +45,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title"><?php echo $user['fullname']; ?></h5>
-        <h6 class="card-subtitle">School Year : 2014-2015</h6>
+        <h6 class="card-subtitle">School Year : <?php echo $school_year['name']; ?></h6>
       </div>
     </div>
     <div class="table-responsive">

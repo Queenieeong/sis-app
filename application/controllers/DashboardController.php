@@ -44,21 +44,25 @@ class DashboardController extends MY_Controller
 			$scheduleMaster  = $this->schedule_master_model->getByWithDetails(['section_id' => $studentEnrolled['section_id']]);
 			$scheduleClasses = $this->schedule_class_model->getManyByWithDetails(['schedule_class.schedule_master_id' => $scheduleMaster['id']]);
 
-			$this->data['studentID'] 			 = $student['id'];
+			$this->data['studentID'] 	   = $student['id'];
 			$this->data['studentEnrolled'] = $studentEnrolled;
 			$this->data['scheduleMaster']  = $scheduleMaster;
 			$this->data['scheduleClasses'] = $scheduleClasses;
-			$this->data['details'] 				 = $details;
+			$this->data['details'] 		   = $details;
 			$this->data['student_account'] = $this->user_model->get_by(['id' => $details['user_id']]);
-			$this->data['credentials'] 		 = $this->student_credential_model->getManyByWithDetails(['student_credentials.student_id' => $student['id']]);
-			$this->data['announcements'] = $this->announcement_model->get_many_by(['publish_status' => 1]);
-			$this->data['events'] = $this->event_model->get_many_by(['publish_status' => 1]);
+			$this->data['credentials'] 	   = $this->student_credential_model->getManyByWithDetails(['student_credentials.student_id' => $student['id']]);
+			$this->data['announcements']   = $this->announcement_model->get_many_by(['publish_status' => 1]);
+			$this->data['events']          = $this->event_model->get_many_by(['publish_status' => 1]);
+			$this->data['school_year']	   = $this->school_year_model->get_by(['is_current' => 1]);
+
 			$this->_renderLayout($this->_componentWrapper());
 		}
 		else {
 			$this->data['announcements'] = $this->announcement_model->get_many_by(['publish_status' => 1]);
-		$this->data['events'] = $this->event_model->get_many_by(['publish_status' => 1]);
-		$this->_renderLayout($this->_componentWrapper());
+			$this->data['events'] = $this->event_model->get_many_by(['publish_status' => 1]);
+			$this->data['school_year']	   = $this->school_year_model->get_by(['is_current' => 1]);
+			
+			$this->_renderLayout($this->_componentWrapper());
 		}
 		
 	}

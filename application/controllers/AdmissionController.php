@@ -78,7 +78,8 @@ class AdmissionController extends MY_Controller
 				$data = array(
 				  'username' => $studentNumber,
 				  'password' => $studentNumber,
-				   );
+				);
+
 				$this->ion_auth->update($userID, $data);
 				
 				if ( ! $studentID) {

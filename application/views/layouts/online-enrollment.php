@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Probex School Inc., | <?php echo $pageHeader; ?></title>
+	<title>Probex School Inc. | Online Enrollment</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url('assets/img/favicon.ico'); ?>">
 
@@ -52,7 +52,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Probex School Inc.</a>
+        <a class="navbar-brand" href="<?php echo site_url('/'); ?>">Probex School Inc.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,7 +60,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<?php echo site_url('/'); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 
@@ -69,9 +69,6 @@
         </div>
     </nav>
     <main role="main" class="container">
-        <div class="alert alert-info">
-            <p>NOTE: The quick brown fox jumps over the lazy dog.</p>
-        </div>
         <form method="post" action="<?php echo site_url('online_enrollment/submit'); ?>">
             <h4>Student Information</h4><br>
             <div class="form-group row">
@@ -106,11 +103,11 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Contact Information</label>
                 <div class="col-sm-5">
-                    <input type="number" id="tel" maxlength="7" x onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" name="student_telephone_number" value="<?php echo set_value('student_telephone_number'); ?>" placeholder="Telephone #">
+                    <input type="text" id="tel" maxlength="7" x onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" name="student_telephone_number" value="<?php echo set_value('student_telephone_number'); ?>" placeholder="Telephone #">
                     <div class="text-danger"><?php echo form_error('student_telephone_number'); ?></div>
                 </div>
                 <div class="col-sm-5">
-                    <input type="number" id="mob" maxlength="11" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" name="student_mobile_number" value="<?php echo set_value('student_mobile_number'); ?>" placeholder="Mobile #">
+                    <input type="text" id="mob" maxlength="11" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" name="student_mobile_number" value="<?php echo set_value('student_mobile_number'); ?>" placeholder="Mobile #">
                     <div class="text-danger"><?php echo form_error('student_mobile_number'); ?></div>
                 </div>
             </div>
@@ -124,7 +121,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Birth Information</label>
                 <div class="col-sm-5">
-                    <input type="text" name="student_birth_date" value="<?php echo set_value('student_birth_date'); ?>" class="form-control birthdatepicker" placeholder="Birth Date">
+                    <input type="date" name="student_birth_date" value="<?php echo set_value('student_birth_date'); ?>" class="form-control birthdatepicker" placeholder="Birth Date">
                     <div class="text-danger"><?php echo form_error('student_birth_date'); ?></div>
                 </div>
                 <div class="col-sm-5">
@@ -202,7 +199,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Occupation</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" name="father_occupation" value="<?php echo set_value('father_occupation'); ?>" placeholder="">
+                    <input type="text" class="form-control" name="father_occupation" value="<?php echo set_value('father_occupation'); ?>" placeholder="">
                     <div class="text-danger"><?php echo form_error('father_occupation'); ?></div>
                 </div>
             </div>
@@ -258,7 +255,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Occupation</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" name="mother_occupation" value="<?php echo set_value('mother_occupation'); ?>" placeholder="">
+                    <input type="text" class="form-control" name="mother_occupation" value="<?php echo set_value('mother_occupation'); ?>" placeholder="">
                     <div class="text-danger"><?php echo form_error('mother_occupation'); ?></div>
                 </div>
             </div>

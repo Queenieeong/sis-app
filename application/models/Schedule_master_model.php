@@ -15,12 +15,17 @@ class Schedule_master_model extends MY_Model {
             sYear.name AS sYearName,
             sDept.name AS sDeptName,
             sGrade.name AS sGradeName,
-            sSection.name AS sSectionName
+            sSection.name AS sSectionName,
+            teachers.teacher_number as adviser_number,
+            teachers.first_name as adviser_first_name,
+            teachers.middle_name as adviser_middle_name,
+            teachers.last_name as adviser_last_name
         ');
         $this->db->join('school_years as sYear', 'sYear.id = schedule_master.school_year_id', 'left');
         $this->db->join('school_departments as sDept', 'sDept.id = schedule_master.department_id', 'left');
         $this->db->join('school_grade_levels as sGrade', 'sGrade.id = schedule_master.grade_level_id', 'left');
         $this->db->join('school_sections as sSection', 'sSection.id = schedule_master.section_id', 'left');
+        $this->db->join('teachers', 'teachers.id = schedule_master.adviser_id', 'left');
 
         return $this->get_all();
     }
@@ -80,6 +85,13 @@ class Schedule_master_model extends MY_Model {
             isset($data['sSectionName']) ? $data['sSectionName'] : ''
         ]);
 
+        $adviser = implode(' ', [
+            isset($data['adviser_number']) ? $data['adviser_number'] : '',
+            isset($data['adviser_first_name']) ? strtoupper($data['adviser_first_name']) : '',
+            isset($data['adviser_last_name']) ? strtoupper($data['adviser_last_name']) : '',
+        ]);
+
+        $data['adviser'] = $adviser;
         $data['title'] = $title;
         $data['viewDetailsLink']  = '<a href="'.$viewDetailsUrl.'">' . $title . '</a>';
 		$data['labelActiveStatus'] = ($data['active_status'] == 1) ? '<label class="badge badge-success">Active</label>':'<label class="badge badge-danger">Inactive</label>';
