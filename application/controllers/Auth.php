@@ -633,15 +633,16 @@ class Auth extends CI_Controller
 				if ($this->ion_auth->update($user->id, $data))
 				{
 					// redirect them back to the admin page if admin, or to the base url if non admin
-					$this->session->set_flashdata('message', $this->ion_auth->messages());
-					$this->redirectUser();
-
+					$this->session->set_flashdata('SUCCESS_MESSAGE', $this->ion_auth->messages());
+					// $this->redirectUser();
+					redirect('users', 'refresh');
 				}
 				else
 				{
 					// redirect them back to the admin page if admin, or to the base url if non admin
-					$this->session->set_flashdata('message', $this->ion_auth->errors());
-					$this->redirectUser();
+					$this->session->set_flashdata('ERROR_MESSAGE', $this->ion_auth->errors());
+					// $this->redirectUser();
+					redirect('users', 'refresh');
 
 				}
 

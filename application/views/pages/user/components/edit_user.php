@@ -34,8 +34,8 @@
             <?php echo lang('edit_user_password_confirm_label', 'password_confirm');?><br />
             <?php echo form_input($password_confirm);?>
       </p>
-
-<!--       <?php if ($this->ion_auth->is_admin()): ?>
+<!-- 
+      <?php if ($this->ion_auth->is_admin()): ?>
 
           <h3><?php echo lang('edit_user_groups_heading');?></h3>
           <?php foreach ($groups as $group):?>
@@ -58,7 +58,7 @@
 
       <?php endif ?> -->
 
-      <?php echo form_hidden('id', $user->id);?>
+      <?php echo form_hidden('id', $user['id']);?>
       <?php echo form_hidden($csrf); ?>
 
       <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>

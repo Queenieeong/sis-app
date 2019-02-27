@@ -95,6 +95,7 @@ $route['users'] = 'UserController';
 $route['users/change_password/(:num)/(:any)'] = 'UserController/change_password/$1/$2';
 $route['users/reset_password/(:num)'] = 'UserController/reset_password/$1';
 $route['users/create_user'] = 'UserController/create_user';
+$route['users/edit_user/(:num)'] = 'UserController/edit_user/$1';
 $route['roles'] = 'AuthController/roleList';
 $route['users_roles'] = 'AuthController/userGroupList';
 $route['roles_permissionss'] = 'AuthController/rolePermissionList';
